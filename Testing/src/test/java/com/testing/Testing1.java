@@ -17,14 +17,24 @@ public class Testing1 {
 		
 		WebDriver driver=new FirefoxDriver();
 		
+		driver.manage().deleteAllCookies();
+		
 		//Enter the website URL
 		
 		driver.get("https://www.google.co.in/");
 		
 		Thread.sleep(3000);
 		
+		driver.navigate().to("https://www.facebook.com/");
+		
+		Thread.sleep(3000);
+		
 		driver.manage().window().maximize();
 		
+		Thread.sleep(3000);
+
+		driver.navigate().back();
+				
 		String url= driver.getCurrentUrl();
 		
 		System.out.println("The current url is:"+url);
@@ -35,7 +45,7 @@ public class Testing1 {
 		
 		Thread.sleep(2000);
 		
-		driver.close();
+		driver.quit();
 
 	}
 
