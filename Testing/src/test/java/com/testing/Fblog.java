@@ -97,3 +97,62 @@ Jan 09, 2024 6:59:08 PM org.openqa.selenium.remote.ProtocolHandshake createSessi
 INFO: Detected dialect: W3C
 successfully registered on facebook
 User logged in successfully
+
+
+	
+	
+package task;
+
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DragandDrop {
+
+	@Test
+  
+  public void draganddrop() throws InterruptedException 
+  {
+	 WebDriverManager.chromedriver().setup();
+	 
+	 WebDriver driver=new ChromeDriver();
+	 
+	 driver.manage().window().maximize();
+	 
+//	 Thread.sleep(1000);
+
+	 driver.manage().deleteAllCookies();
+	 
+//	 Thread.sleep(1000);
+
+	 driver.get("https://jqueryui.com/resources/demos/droppable/default.html");
+	 
+	 Thread.sleep(1000);
+	 	  
+	  WebElement drag=driver.findElement(By.id("draggable"));
+	  
+//	  Thread.sleep(1000);
+	  
+	  WebElement drop=driver.findElement(By.id("droppable"));
+	  
+//	  Thread.sleep(3000);
+	  
+	  Actions action=new Actions(driver);
+	  
+//	  actions.dragAndDrop(drag, drop).build().perform();
+	  
+	  action.clickAndHold(drag).moveToElement(drop).release().perform();
+	  
+//	  Thread.sleep(1000);
+	  
+	 
+  }	
+  
+}
+
