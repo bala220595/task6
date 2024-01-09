@@ -35,7 +35,7 @@ public class Testing2 {
 		
 		//operation
 		
-		if (driver.getTitle().equals("STORE")) {
+		if (driver.getTitle().equals(title)) {
 			System.out.println("Page landed on the correct website");
 		}			
 			else
